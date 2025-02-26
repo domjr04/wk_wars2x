@@ -1866,21 +1866,6 @@ Citizen.CreateThread( function()
 		Citizen.Wait( 3000 )
 	end
 end )
-
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(10) -- Adjust interval as needed
-
-        if RADAR:IsPowerOn() then
-            local frontSpeed = RADAR:GetAntennaSpeed("front")
-
-            if frontSpeed then
-                SendNUIMessage({ type = "playspeed", speed = frontSpeed })
-            end
-        end
-    end
-end)
-
 ------------------------------------------------
 ------------------------------------------------
 --------------DOPPLER SOUND EFFECT--------------
